@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title>Cadastro</title>
+</head>
+
+<h:body>
+
+	<div id="content">
+		<h1>
+			Pessoas <small>Nova pessoas</small>
+		</h1>
+		<h:form>
+			<h:panelGroup rendered="#{not empty userMb.user.id}">
+				<div>
+					<h:outputLabel value="Código: " />
+					<h:inputText readonly="true" value="#{userMb.user.id}" />
+				</div>
+			</h:panelGroup>
+			<h:inputHidden value="#{userMb.user.id}" />
+			<div>
+				<h:outputLabel value="Nome: " />
+				<h:inputText value="#{userMb.user.nome}" />
+			</div>
+			<div>
+				<h:outputLabel value="Endereco: " />
+				<h:inputText value="#{userMb.user.endereco}" />
+			</div>
+			<div>
+			<h:outuptLabel value="Profissao: "/>
+			<h:inputText value="#{userMb.user.profissao}" />
+			</div>
+			<div>
+			<h:outputLabel value= "Cidade"/>
+			<h:inputText value="#{userMb.user.cidade}"/>
+			</div>
+			<button type="reset">Restaurar</button>
+			<h:commandButton value="Salvar" action="#{userMb.salvar()}"/>
+		</h:form>
+	</div>
+
+</h:body>
+
+</html>
